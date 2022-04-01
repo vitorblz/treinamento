@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - "4141:3000"
+    volumes: 
+      - "./frontend:/app"
+  backend:
+    container_name: backend
+    build: ./backend
+    ports:
+      - "6651:6651"
+    volumes: 
+      - "./backend:/app"
