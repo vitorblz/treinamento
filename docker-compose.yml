@@ -6,11 +6,12 @@ services:
     ports:
       - "4141:3000"
     volumes: 
-      - "./frontend:/app"
+      - "./frontend/src:/usr/scr/app/src"
   backend:
     container_name: backend
     build: ./backend
     ports:
       - "6651:6651"
     volumes: 
-      - "./backend:/app"
+      - "./backend:/home/node/app"
+      - /home/node/app/node_modules

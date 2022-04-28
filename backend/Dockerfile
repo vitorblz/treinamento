@@ -1,9 +1,15 @@
 FROM node:16.14.2-stretch-slim
 
-WORKDIR /app
+WORKDIR /home/node/app
+
+COPY package.json ./
+COPY package-lock.json ./
+
+RUN npm ci
 
 COPY . .
 
-RUN npm install
+USER node
 
 CMD ["npm", "run", "dev"]
+
