@@ -1,7 +1,7 @@
 
 import logo from './logo.svg';
 import './App.css';
-//teste
+//test
 export default function App() {
   return (
     <div className="App">
