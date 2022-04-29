@@ -1,17 +1,29 @@
 version: '3.3'
 services:
+  reverse-proxy:
+    image: traefik:v2.6
+    command: --api.insecure=true --providers.docker
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   frontend:
     container_name: frontend
+    labels:
+      - "traefik.http.routers.frontend.rule=Host(`frontend.docker.localhost`)"
     build: ./frontend
     ports:
       - "4141:3000"
-    volumes: 
+    volumes:
       - "./frontend/src:/usr/scr/app/src"
   backend:
     container_name: backend
+    labels:
+      - "traefik.http.routers.backend.rule=Host(`backend.docker.localhost`)"
     build: ./backend
     ports:
       - "6651:6651"
-    volumes: 
+    volumes:
       - "./backend:/home/node/app"
       - /home/node/app/node_modules
