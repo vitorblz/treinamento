@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "pre-commit": "ls",
+    "pre-commit": "lint-staged",
     "commit": "cz"
   },
   "lint-staged": {
