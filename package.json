@@ -6,8 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "pre-commit": "lint-staged",
+    "pre-commit": "ls",
     "commit": "cz"
+  },
+  "lint-staged": {
+    "**/*.+(js|ts|tsx)": [
+      "npm --prefix frontend run lintfile:fix",
+      "npm --prefix backend run lint"
+    ]
   },
   "repository": {
     "type": "git",
