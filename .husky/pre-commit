@@ -1,4 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm --prefix backend run lint
+# npm --prefix backend run lint
+# npm --prefix frontend run lint
+npm run pre-commit

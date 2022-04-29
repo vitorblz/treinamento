@@ -9,12 +9,6 @@
     "pre-commit": "lint-staged",
     "commit": "cz"
   },
-  "lint-staged": {
-    "**/*.+(js|ts|tsx)": [
-      "npm --prefix frontend run lintfile:fix",
-      "npm --prefix backend run lint"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitorblz/treinamento.git"
