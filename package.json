@@ -3,26 +3,39 @@
   "version": "1.0.0",
   "description": "### Requisitos:",
   "main": "index.js",
-  "dependencies": {
-    "husky": "^7.0.4"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "commit": "cz"
+  },
+  "lint-staged": {
+    "**/*.+(js|ts|tsx)": [
+      "npm --prefix frontend run lintfile:fix",
+      "npm --prefix backend run lint"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitorblz/treinamento.git"
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
-    }
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vitorblz/treinamento/issues"
   },
-  "homepage": "https://github.com/vitorblz/treinamento#readme"
+  "homepage": "https://github.com/vitorblz/treinamento#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.4.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
