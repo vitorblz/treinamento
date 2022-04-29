@@ -18,8 +18,10 @@
   - npx eslint --init
   - npm init @eslint/config
   - VSCODE: verificar editor padrao
+- Adicionar eslint no front
 - Padrão para commit (Husky/Commitzen)
   - Pre-commit commit message and eslint 
+  - teste
   
 - Log em sistemas node
 - Graceful shutdown/start
