@@ -5,9 +5,9 @@ WORKDIR /home/node/app
 COPY package.json ./
 COPY package-lock.json ./
 
-RUN npm ci
+RUN npm ci \
+  && npm run build
 
 COPY . .
 
 CMD ["npm", "run", "start"]
-
