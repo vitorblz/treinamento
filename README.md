@@ -47,6 +47,8 @@
   },
   ```
   - Config commitzen in lint-staged
+  - Build teste and run in production
+
   
 - Log em sistemas node
 - Graceful shutdown/start
