@@ -14,5 +14,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(SERVER_PORT, () => {
-  console.log(`SERVER START AT PORT ${SERVER_PORT}`);
+  console.log(`SERVER START AT PORT ${process.env.PORT || SERVER_PORT}`);
 });
