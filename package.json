@@ -9,7 +9,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "(frontend|backend)/*.+(js|ts|tsx)": [
+    "(frontend|backend)/**/*.+(js|ts|tsx)": [
       "npm --prefix frontend run lint:fix",
       "npm --prefix backend run lint:fix"
     ]
