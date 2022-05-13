@@ -1,0 +1,34 @@
+{
+  "name": "treinamento-aula3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.+(js|ts|tsx)": [
+      "npm --prefix frontend run lint:fix",
+      "npm --prefix backend run lint:fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorblz/treinamento.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitorblz/treinamento/issues"
+  },
+  "homepage": "https://github.com/vitorblz/treinamento#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "husky": "^8.0.0",
+    "lint-staged": "^12.4.1"
+  }
+}
