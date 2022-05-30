@@ -1,15 +1,23 @@
 import express from 'express';
 
-const SERVER_PORT = 6651;
+import env from './config/env';
+import logger from './config/logger';
 
 const app = express();
 
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.json({ id: 1, nome: 'Pesquisa 123' });
+    try{
+        logger.info('Rota inicial /');
+        res.json({ id: 1, nome: 'Pesquisa 1234' });
+    }
+    catch(e){
+        logger.info('SERVER ERROR', e);
+        res.status(500).send('SERVER ERROR');
+    }
 });
 
-app.listen(SERVER_PORT, () => {
-    console.log(`SERVER START AT PORT ${SERVER_PORT}`);
+app.listen(env.SERVER_PORT, () => {
+    console.log(`SERVER START AT PORT ${env.SERVER_PORT}`);
 });
